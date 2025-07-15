@@ -1,0 +1,176 @@
+@media screen and (max-width: 480px) {
+    .form-container-box {
+        margin-top: 40%;
+        left: 0%;
+        background-color: #fff;
+        border-radius: 35px;
+        width: 100%;
+      }
+      
+    .form-input{
+        border: none;
+        outline: none;
+        box-shadow: none;
+        border-bottom: 1.5px solid #ced4da;
+        margin-bottom: 1rem;
+    }
+    .form-input:focus
+    {
+        border-bottom: 1.5px solid #ced4da;
+    
+    }
+    .btn-form{
+        background-color: #56CC56;
+        color: #fff;
+        margin-bottom: 1rem;
+    }
+
+}
+@media screen and (min-width: 480px) and (max-width: 600px) {
+    .form-container-box {
+        margin-top: 10%;
+        left: 18%;
+        background-color: #fff;
+        border-radius: 10px;
+        width: 65%;
+      }
+      .login-form-img
+    {
+        height: 100vh;
+    }
+    .form-input{
+        border: none;
+        outline: none;
+        box-shadow: none;
+        border-bottom: 1.5px solid #ced4da;
+        margin-bottom: 1rem;
+    }
+    .form-input:focus
+    {
+        border-bottom: 1.5px solid #ced4da;
+    
+    }
+    .btn-form{
+        background-color: #56CC56;
+        color: #fff;
+        margin-bottom: 1rem;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 760px) {
+    .form-container-box {
+        margin-top: 10%;
+        left: 25%;
+        background-color: #fff;
+        border-radius: 10px;
+        width: 53%;
+      }
+    .form-input{
+        border: none;
+        outline: none;
+        box-shadow: none;
+        border-bottom: 1.5px solid #ced4da;
+        margin-bottom: 1.3rem;
+    }
+    .form-input:focus
+    {
+        border-bottom: 1.5px solid #ced4da;
+    
+    }
+    .login-form-img
+    {
+        height: 100vh;
+    }
+    .btn-form{
+        background-color: #56CC56;
+        color: #fff;
+        margin-bottom: 1.3rem;
+    }
+}
+@media screen and (min-width: 760px) and (max-width: 900px) {
+    .form-container-box {
+        margin-top: 10%;
+        left: 30%;
+        background-color: #fff;
+        border-radius: 10px;
+        width: 42%;
+      }
+    .form-input{
+        border: none;
+        outline: none;
+        box-shadow: none;
+        border-bottom: 1.5px solid #ced4da;
+        margin-bottom: 1.3rem;
+    }
+    .form-input:focus
+    {
+        border-bottom: 1.5px solid #ced4da;
+    
+    }
+    .btn-form{
+        background-color: #56CC56;
+        color: #fff;
+        margin-bottom: 1.3rem;
+    }
+}
+@media screen and (min-width: 900px) and (max-width: 1024px) {
+    .form-container-box {
+        margin-top: 10%;
+        left: 32%;
+        background-color: #fff;
+        border-radius: 10px;
+        width: 38%;
+      }
+    .form-input{
+        border: none;
+        outline: none;
+        box-shadow: none;
+        border-bottom: 1.5px solid #ced4da;
+        margin-bottom: 1.3rem;
+    }
+    .form-input:focus
+    {
+        border-bottom: 1.5px solid #ced4da;
+    
+    }
+    .btn-form{
+        background-color: #56CC56;
+        color: #fff;
+        margin-bottom: 1.3rem;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .form-container-box {
+        margin-top: 10%;
+        left: 33%;
+        background-color: #fff;
+        border-radius: 10px;
+        width: 34%;
+      }
+    .form-input{
+        border: none;
+        outline: none;
+        box-shadow: none;
+        border-bottom: 1.5px solid #ced4da;
+        margin-bottom: 1.3rem;
+    }
+    .form-input:focus
+    {
+        border-bottom: 1.5px solid #ced4da;
+    
+    }
+    .btn-form{
+        background-color: #56CC56;
+        color: #fff;
+        margin-bottom: 1.3rem;
+    }
+}
+  
+@media screen and (min-width: 1200px) {
+  .form-container-box {
+    margin-top: 10%;
+    left: 37%;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 29%;
+  }
+}

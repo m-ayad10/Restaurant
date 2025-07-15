@@ -1,0 +1,37 @@
+.bottom-container
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    border-top: rgb(160, 155, 155) solid 1px;
+}
+.bottom-bar
+{
+    display: none;
+}
+.bottom-box
+{        
+    width: 25%;
+    text-align: center;
+}
+.bottom-hieght
+{
+    height: 4rem;
+}
+.bottom-text
+{
+    font-size: small;
+}
+.bottom-icon
+{
+    font-size: larger;
+}
+@media (max-width: 768px) {
+    .bottom-bar
+    {
+        display: block;
+    }
+}
+  

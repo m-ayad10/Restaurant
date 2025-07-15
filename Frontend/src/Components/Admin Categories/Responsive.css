@@ -1,0 +1,111 @@
+/* Styles for screens between 600px and 1200px */
+@media (max-width: 480px) {
+    .addItem-container {
+        gap: 0%;
+      }
+      .addItem-box {
+        width: 98%;
+        border-radius: 5px;
+        margin-top: 8px;
+      }
+      .addItem-img-box {
+        height: 9rem;
+      }
+}
+@media (min-width: 480px) and (max-width: 600px) {
+    .addItem-container {
+        gap: 2%;
+      }
+      .addItem-box {
+        width: 48%;
+        border-radius: 5px;
+        margin-top: 8px;
+      }
+      .addItem-img-box {
+        height: 8.4rem;
+      }
+}
+
+@media (min-width: 600px) and (max-width: 700px) {
+    .addItem-container {
+        gap: 2%;
+      }
+      .addItem-box {
+        width: 48%;
+        border-radius: 5px;
+        margin-top: 8px;
+      }
+      .addItem-img-box {
+        height: 9rem;
+      }
+}
+@media (min-width: 700px) and (max-width: 795px) {
+    .addItem-container {
+        gap: 2%;
+      }
+      .addItem-box {
+        width: 48%;
+        border-radius: 5px;
+        margin-top: 8px;
+      }
+      .addItem-img-box {
+        height: 9.5rem;
+      }
+}
+/* Styles for screens between 600px and 1200px */
+@media (min-width: 795px) and (max-width: 900px) {
+    .addItem-container {
+        gap: 1%;
+      }
+      .addItem-box {
+        width: 32%;
+        border-radius: 5px;
+        margin-top: 8px;
+      }
+      .addItem-img-box {
+        height: 9.5rem;
+      }
+}
+
+/* Styles for screens between 600px and 1200px */
+@media (min-width: 900px) and (max-width: 1024px) {
+    .addItem-container {
+        gap: 1%;
+      }
+      .addItem-box {
+        width: 32%;
+        border-radius: 5px;
+        margin-top: 8px;
+      }
+      .addItem-img-box {
+        height: 11rem;
+      }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+    .addItem-container {
+        gap: 1%;
+      }
+      .addItem-box {
+        width: 32%;
+        border-radius: 5px;
+        margin-top: 8px;
+      }
+      .addItem-img-box {
+        height: 12rem;
+      }
+}
+
+@media screen and (min-width: 1200px) {
+  .addItem-container {
+    gap: 1%;
+  }
+  .addItem-box {
+    width: 24%;
+    border-radius: 5px;
+    margin-top: 8px;
+  }
+  .addItem-img-box {
+    height: 12rem;
+  }
+}

@@ -1,0 +1,155 @@
+/* Styles for screens between 600px and 1200px */
+@media  (max-width: 480px) {
+  .food-detail-addItem
+  {
+      gap: 2%;
+  }
+  .detail-addItem-img-box
+  {
+      width: 48%;
+  }
+  .food-quantity-container
+{
+    display: flex;
+    justify-content: center;
+}
+  .detail-addItem-img
+  {
+      width: 100%;
+      height: 8rem;
+      border-radius: 8px;
+  }
+  .select-img
+  {
+      scale: 0.83;
+  }
+}
+@media  (min-width: 767px) {
+  /* .food-detail-container
+{
+    height: 100vh;
+    overflow-y: auto;
+}
+.food-detail-container::-webkit-scrollbar
+{
+  display: none;
+} */
+}
+
+/* Styles for screens between 600px and 1200px */
+@media (min-width: 480px) and (max-width: 600px) {
+  .food-detail-addItem
+  {
+      gap: 1%;
+  }
+  .food-quantity-container
+{
+    display: flex;
+    justify-content: center;
+}
+  .detail-addItem-img-box
+  {
+      width: 40%;
+  }
+  .detail-addItem-img
+  {
+      width: 100%;
+      height: 8rem;
+      border-radius: 8px;
+  }
+  .select-img
+  {
+      scale: 0.83;
+  }
+}
+
+/* Styles for screens between 600px and 1200px */
+@media (min-width: 600px) and (max-width: 767px) {
+  .food-detail-addItem
+  {
+      gap: 1%;
+  }
+  .food-quantity-container
+{
+    display: flex;
+    justify-content: center;
+}
+  .detail-addItem-img-box
+  {
+      width: 33%;
+  }
+  .detail-addItem-img
+  {
+      width: 100%;
+      height: 9rem;
+      border-radius: 8px;
+  }
+  .select-img
+  {
+      scale: 0.8;
+  }
+}
+
+/* Styles for screens between 600px and 1200px */
+@media (min-width: 767px) and (max-width: 900px) {
+  .food-detail-addItem
+  {
+      gap: 2%;
+  }
+  .detail-addItem-img-box
+  {
+      width: 43%;
+  }
+  .detail-addItem-img
+  {
+      width: 100%;
+      height: 8rem;
+      border-radius: 8px;
+  }
+  .select-img
+  {
+      scale: 0.85;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+  .food-detail-addItem
+  {
+      gap: 2%;
+  }
+  .detail-addItem-img-box
+  {
+      width: 37%;
+  }
+  .detail-addItem-img
+  {
+      width: 100%;
+      height: 9rem;
+      border-radius: 8px;
+  }
+  .select-img
+  {
+      scale: 0.8;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .food-detail-addItem
+{
+    gap: 2%;
+}
+.detail-addItem-img-box
+{
+    width: 31%;
+}
+.detail-addItem-img
+{
+    width: 100%;
+    height: 9rem;
+    border-radius: 8px;
+}
+.select-img
+{
+    scale: 0.85;
+}
+}

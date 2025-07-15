@@ -1,0 +1,38 @@
+.form-container
+{
+    position: relative;
+}
+
+.form-back-img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.form-container-box
+{
+    position: absolute;
+    margin-top: 10%;
+    left: 35%;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 30%;
+}
+.form-input{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    border-bottom: 1.5px solid #ced4da;
+    margin-bottom: 1.3rem;
+}
+.form-input:focus
+{
+    border-bottom: 1.5px solid #ced4da;
+
+}
+.btn-form{
+    background-color: #56CC56;
+    color: #fff;
+    margin-bottom: 1.3rem;
+}

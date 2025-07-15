@@ -1,0 +1,45 @@
+@media screen and (max-width: 480px) {
+    .book-table-box
+    {
+        background-color: #fff;
+        margin-top: 10%;
+        padding: 9px;
+        width: 100%;
+        border: 1.5px solid #ced4da;
+        border-radius: 8px;
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 600px) {
+    .book-table-box
+{
+    width: 70%;
+} 
+}
+@media screen and (min-width: 600px) and (max-width: 767px) {
+    .book-table-box
+    {
+        width: 60%;
+    }
+}
+@media screen and (min-width: 767px) and (max-width: 900px) {
+    .book-table-box
+    {
+        width: 70%;
+    }
+}
+@media screen and (min-width: 900px) and (max-width: 1024px) {
+  .book-table-box {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  .book-table-box {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .book-table-box {
+    width: 50%;
+  }
+}

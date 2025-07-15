@@ -1,0 +1,131 @@
+/* Styles for screens between 600px and 1200px */
+@media  (max-width: 400px) {
+    .cart-box
+    {
+        gap: 0.1rem;
+        display: block;
+    }
+    .cart-content
+    {
+        padding-left: 7px;
+        padding-bottom: 6px;
+    }
+    .cart-img-box
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .cart-img
+    {
+        height:8rem ;
+    }
+  }
+  @media  (max-width: 500px) {
+    .delivery-input
+{
+    width: 100%;
+}
+  }
+  @media (min-width: 400px) and (max-width: 550px) {
+    .cart-box
+    {
+        gap: 0.2rem;
+        display: block;
+    }
+    .cart-img-box
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .cart-content
+    {
+        padding-left: 8px;
+        padding-bottom: 6px;
+    }
+    .cart-img
+    {
+        height:8rem ;
+    }
+  }
+ 
+  /* Styles for screens between 600px and 1200px */
+  @media (min-width: 550px) and (max-width: 700px) {
+    .cart-box
+    {
+        gap: 0.4rem;
+    }
+    .cart-img-box
+    {
+        width: 43%;
+    }
+    .cart-img
+    {
+        height:8.5rem ;
+    }
+  }
+  
+  /* Styles for screens between 600px and 1200px */
+  @media (min-width: 700px) and (max-width: 900px) {
+    .cart-box
+    {
+        gap: 0.6rem;
+    }
+    .cart-img-box
+    {
+        width: 35%;
+    }
+    .cart-img
+    {
+        height:9rem ;
+    }
+      
+  }
+  
+  /* Styles for screens between 600px and 1200px */
+  @media (min-width: 900px) and (max-width: 1024px) {
+    .cart-box
+{
+    gap: 1rem;
+}
+.cart-img-box
+{
+    width: 29%;
+}
+.cart-img
+{
+    height:9rem ;
+}
+  }
+  
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    .cart-box
+{
+    gap: 1rem;
+}
+.cart-img-box
+{
+    width: 27%;
+}
+.cart-img
+{
+    height:9rem ;
+}
+  }
+  
+  @media screen and (min-width: 1200px) {
+    .cart-box
+{
+    gap: 1rem;
+}
+.cart-img-box
+{
+    width: 24%;
+}
+.cart-img
+{
+    height:10rem ;
+}
+  }
+  

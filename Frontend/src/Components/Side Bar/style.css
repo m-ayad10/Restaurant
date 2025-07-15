@@ -1,0 +1,103 @@
+.sidebar-container{
+    display: flex;
+
+}
+.main-content
+{
+    padding: 10px;
+}
+.sidebar{
+    height: 100vh;
+    background-color: #f1794f;
+    color: #fff;
+    padding: 15px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.main-content
+{
+    margin-left: 60px;
+}
+.top-section
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7px;
+}
+
+
+.logout-section
+{
+    margin-top: auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    gap: 10px;
+    padding: 5px 20px 5px 20px;
+    align-items: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.logout-section:hover
+{
+    color: #a8350b;
+}
+.logout-icon
+{
+    font-size: 1.5rem;
+}
+.logout-name
+{
+    font-size: 1.3rem;
+}
+.logo
+{
+    font-size: 1.7rem;
+}
+.bars
+{
+    font-size: 1.6rem;
+}
+.link
+{
+    padding: 5px 20px 5px 20px;
+    margin-bottom: 2px;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    align-items: center;
+    border-radius: 5px;
+    gap: 10px;
+}
+
+.link:hover
+{
+    color: #fff;
+    transition: all 0.5s;
+    background-color: #a8350b;
+}
+.link-active
+{
+    color: #fff;
+    transition: all 0.5s;
+    background-color: #a8350b;
+}
+.link-icon
+{
+    font-size: 1.4rem;
+}
+.link-text
+{
+    font-size: 1.1rem;
+}
+.link-hr
+{
+    color: #fff;
+    width: 100%;
+    padding: 1px;
+    margin: 0;
+}

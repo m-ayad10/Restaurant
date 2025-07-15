@@ -1,0 +1,94 @@
+.food-detail-container
+{
+    margin-top: 1rem;
+    padding: 0 1rem 0 2rem;
+
+}
+.food-img-cont img
+{
+    border-radius:6px ;
+}
+.food-detail-name
+{
+    margin: 0;
+}
+.btn-addToCart
+{
+    background-color: #56CC56;
+    color: #fff;
+    width: 100%;
+
+}
+.btn-addToCart:hover
+{
+    background-color: #0a960a;
+    color: #fff;
+}
+
+.btn-food-detail
+{
+    background-color:#f1794f ;
+    width: 2.3rem;
+    height: 2.5rem;
+    color: #fff;
+    border-radius: 0.8rem;
+    font-size: 1.5rem;
+    transition: background-color 10ms ease;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    align-items: center;
+}
+.review-initial
+{
+    background-color: #af3809;
+    width: 3rem;
+    height: 3rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+}
+.review-initial *
+{
+    font-weight:500;
+}
+.btn-food-detail:hover
+{
+    color: #fff;
+    background-color: #af3809; /* Slightly darker shade */
+}
+.food-detail-addItem
+{
+    display: flex;
+    gap: 3%;
+    overflow-x: scroll;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.food-detail-addItem::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit-based browsers */
+}
+.detail-addItem-img-box
+{
+    width: 30%;
+    flex-shrink: 0; /* Prevent shrinking of boxes to keep consistent width */
+
+}
+.detail-addItem-img
+{
+    width: 100%;
+    height: 9rem;
+    border-radius: 8px;
+}
+.food-img-cont
+{
+    position: relative;
+}
+.select-img
+{
+    scale: 0.8;
+    border: #56CC56 solid 4px;
+}

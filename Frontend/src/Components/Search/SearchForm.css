@@ -1,0 +1,28 @@
+.searchForm{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.searchForm .fa-arrow-left{
+    position: absolute;
+    left: 20px;
+    color: #111;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.searchForm .fa-magnifying-glass{
+    position: absolute;
+    left: 70px;
+    color: #999999;
+}
+.searchForm input{
+    margin-left: 40px;
+    width: calc(100% - 45px);
+    padding: 5px;
+    background-color: #ced4da;
+    padding-left: 40px;
+    border: none;
+    color: #333;
+    outline: none;
+    font-size: medium;
+}

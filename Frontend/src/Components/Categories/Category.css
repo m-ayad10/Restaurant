@@ -1,0 +1,108 @@
+.category-display-container
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+}
+
+.category-display-img-box
+{
+    position: relative;
+    width: 19%;
+}
+
+/* Styles for screens between 600px and 1200px */
+@media  (max-width: 480px) {
+    .category-container,.category-display-container {
+        gap: 2%;
+      }
+    
+      .category-display-img-box {
+        width: 48%;
+        margin-bottom: 0.8rem;
+      }
+    
+      .category-img {
+        height: 11rem;
+      }
+}
+
+/* Styles for screens between 600px and 1200px */
+@media (min-width: 480px) and (max-width: 600px) {
+    .category-container,.category-display-container {
+        gap: 1%;
+      }
+    
+      .category-display-img-box{
+        width: 32.6%;
+        margin-bottom: 0.8rem;
+      }
+    
+      .category-img {
+        height: 12rem;
+      }
+}
+
+/* Styles for screens between 600px and 1200px */
+@media (min-width: 600px) and (max-width: 767px) {
+    .category-container ,.category-display-container{
+        gap: 1%;
+      }
+    
+      .category-display-img-box {
+        width: 32%;
+        margin-bottom: 1rem;
+      }
+    
+      .category-img {
+        height: 12rem;
+      }
+}
+
+/* Styles for screens between 600px and 1200px */
+@media (min-width: 767px) and (max-width: 900px) {
+    .category-container ,.category-display-container{
+        gap: 1%;
+      }
+    
+      .category-display-img-box {
+        width: 24%;
+        margin-bottom: 1rem;
+
+      }
+    
+      .category-img {
+        height: 12rem;
+      }
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+    .category-container,.category-display-container {
+        gap: 1%;
+      }
+    
+      .category-display-img-box{
+        width: 19%;
+        margin-bottom: 1rem;
+
+      }
+    
+      .category-img {
+        height: 12rem;
+      }
+}
+
+@media screen and (min-width: 1200px) {
+  .category-container,.category-display-container {
+    gap: 1%;
+  }
+
+  .category-display-img-box{
+    width: 19%;
+    margin-bottom: 1rem;
+  }
+
+  .category-img {
+    height: 14rem;
+  }
+}

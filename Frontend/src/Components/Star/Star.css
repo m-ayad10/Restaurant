@@ -1,0 +1,36 @@
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.star-rating {
+    display: flex;
+    gap: 0.1rem;
+}
+
+.star-small {
+    font-size: 1.2rem;
+    color: #ccc; /* Default empty star color */
+}
+.star-big {
+    font-size: 2rem;
+    color: #ccc; /* Default empty star color */
+}
+
+.on .star {
+    color: #ffc107; /* Fully filled star color */
+}
+
+.half .star {
+    background: linear-gradient(90deg, #ffc107 50%, #ccc 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.off .star {
+    color: #ccc; /* Empty star color */
+}

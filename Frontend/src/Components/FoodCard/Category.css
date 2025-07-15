@@ -1,0 +1,70 @@
+.category-border
+{
+    padding: 1rem 1.5rem 10px 1.5rem;
+}
+.orange-t{
+    color: #f1794f;
+    margin: 0;
+}
+.category-container {
+    display: flex;
+    overflow-x: scroll;
+    gap: 1%;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.category-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit-based browsers */
+}
+
+.category-img-box {
+    position: relative;
+    width: 19%;
+    flex-shrink: 0; /* Prevent shrinking of boxes to keep consistent width */
+}
+
+.category-img {
+    width: 100%;
+    border-radius: 8px;
+    height: 14rem;
+    object-fit: cover; /* Ensures the image fits the box without distortion */
+}
+.animate-trigger
+{
+    animation-timeline: view();
+    animation:apear 1s linear;
+    
+    animation-range: entry 0% cover 40%;
+}
+@keyframes apear
+{
+    from{
+        opacity: 0;
+        scale: 0.5;
+        /* transform: translate(-100px); */
+    }
+    to{
+        scale: 1;
+        opacity: 1;
+        /* transform: translate(0px); */
+    }
+}
+.category-img-text {
+    color: #fff;
+    position: absolute;
+    bottom: 3%;
+    left: 5%;
+    background-color: rgba(0, 0, 0, 0.5); /* More visible semi-transparent background */
+    border-radius: 4px; /* Smooth corners for the text background */
+    font-size: 1rem; /* Adjust text size */
+    padding: 0;
+    margin: 0;
+}
+
+.category-container {
+    scroll-behavior: smooth; /* Smooth scrolling for better UX */
+}
+.left-50
+{
+    margin-left: 40%;
+}

@@ -1,0 +1,31 @@
+*{
+  margin: 0;
+}
+.cursor-p
+{
+  cursor: pointer;
+}
+body{
+  background-color: #ffffff;
+}
+.green-t{
+  color:#56CC56 ;
+}
+
+.custom-swal-popup
+{
+    width: 30%;
+    font-size: 17px;
+}
+.custom-swal-popup .swal2-icon img {
+    width: 50%; /* Scale the icon to 50% of the width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: none; /* Override default max width */
+}
+.custom-swal-popup .swal2-icon {
+    margin: 0 auto; /* Center the icon within the popup */
+}
+.custom-swal-popup *
+{
+    margin: 0;
+}

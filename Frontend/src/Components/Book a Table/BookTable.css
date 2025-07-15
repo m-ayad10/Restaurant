@@ -1,0 +1,56 @@
+.book-table-container
+{
+    display: flex;
+    justify-content: center;
+   
+}
+.book-table-main
+{
+    background-image: url('https://th.bing.com/th/id/OIP.zxfj0lYpgbfcfCYfkXYNmwHaFW?w=257&h=186&c=7&r=0&o=5&dpr=1.5&pid=1.7');
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    width: 100%; /* Takes the full width of the container */
+    height: 100vh;
+}
+.gap-table
+{
+    display: flex;
+}
+.table-input
+{
+    border: 0;
+    outline: 0;
+    border-bottom: 1.5px solid #ced4da;
+    padding: 4px;
+    margin: 8px;
+}
+.book-table-box
+{
+    background-color: #fff;
+    margin-top: 5%;
+    padding: 9px;
+    width: 50%;
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+}
+.table-textarea
+{
+    width: 100%;
+    padding: 8px;
+    outline: none;
+    border: 1.5px solid #ced4da;
+    border-radius: 5px;
+}
+.btn-table
+{
+    width: 100%;
+    background-color: #56CC56;
+    color: #fff;
+    margin-bottom: 4px;
+}
+.btn-table:hover
+{
+    background-color: #0cb40c;
+    color: #fff;
+}
