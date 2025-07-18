@@ -14,11 +14,12 @@ function AdminAddItems() {
   const [description, setDescription] = useState('')
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
+    const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/category')
+        const response = await axios.get(`${SERVER_URL}/category`)
         setCateg(response.data.data)
       } catch (error) {
         console.log(error);
@@ -56,7 +57,8 @@ function AdminAddItems() {
       formData.append('category', category)
       formData.append('price', price)
       formData.append('image', imageFile)
-      const response = await axios.post('http://localhost:3000/item', formData, {
+      
+      const response = await axios.post(`${SERVER_URL}/item`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       })
       const { status, message, error } = response.data

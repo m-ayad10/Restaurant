@@ -11,6 +11,8 @@ import axios from 'axios';
 function SideBar({ children }) {
     const navigate=useNavigate()
     const [isOpen, setIsOpen] = useState(true)
+          const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
     useEffect(() => {
         const updateOpen = () => {
             if (window.innerWidth < 480) {
@@ -52,7 +54,7 @@ function SideBar({ children }) {
  const adminSignOut=async()=>
     {
         try {
-           const response= await axios.post('http://localhost:3000/admin/logout',{},{withCredentials:true})
+           const response= await axios.post(`${SERVER_URL}/admin/logout`,{},{withCredentials:true})
            if (response.data.status) {
             navigate('/admin/login')
            }

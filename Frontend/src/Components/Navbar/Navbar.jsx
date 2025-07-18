@@ -6,6 +6,8 @@ import { getUserDetails } from '../../AuthMiddleware'
 function Navbar() {
   const navigate = useNavigate()
   const [user, setUser] = useState()
+        const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
 
   useEffect(() => {
     getUserDetails(setUser)
@@ -13,7 +15,7 @@ function Navbar() {
 
   const signOut = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/logout', {}, { withCredentials: true })
+      const response = await axios.post(`${SERVER_URL}/logout`, {}, { withCredentials: true })
       if (response.data.status) {
         navigate('/login')
       }

@@ -7,6 +7,7 @@ function MyOrders() {
     const [user, setUser] = useState()
     const [orders, setOrders] = useState([])
     const navigate = useNavigate()
+      const SERVER_URL = import.meta.env.VITE_SERVER_URL;
     useEffect(() => {
         getUserDetails(setUser)
     }, [])
@@ -16,7 +17,7 @@ function MyOrders() {
         }
         const fetchOrder = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/orders/${user.id}`)
+                const response = await axios.get(`${SERVER_URL}/orders/${user.id}`)
                 const { status, message, data } = response.data
                 if (status) {
                     const sortedOrders = data.orders.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));

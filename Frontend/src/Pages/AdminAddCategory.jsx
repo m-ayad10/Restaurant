@@ -8,6 +8,7 @@ function AdminAddCategory() {
      const [image, setImage] = useState(null);
      const [name,setName]=useState('')
      const [imageFile,setImageFile]=useState(null)
+     const SERVER_URL = import.meta.env.VITE_SERVER_URL;
      const [loading,setLoading]=useState(false)
      const navigate=useNavigate()
     
@@ -35,11 +36,15 @@ function AdminAddCategory() {
             const formData=new FormData()
             formData.append('name',name)
             formData.append('image',imageFile)
-            const response=await axios.post('http://localhost:3000/category',formData,{
+            console.log(imageFile);
+            
+          const response=await axios.post(`${SERVER_URL}/category`,formData,
+            {
                 headers:{
-                    'Content-Type':'multipart/form-data'
+                    'Content-Type':'multipart/form-data'  
                 },
-            })
+            }
+          )
             const {status,message,error}= response.data
             if (status) {
                 alert(message)

@@ -21,12 +21,14 @@ function Review({ data, setData }) {
         formData: [] // Initialize as an empty array
     });
     const [userReeview, setUserReview] = useState({ rating: 0, comment: "", userId: '', username: '' });
+    const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
 
 
     useEffect(() => {
         const getUserDetails = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/verify-token', { withCredentials: true })
+                const response = await axios.get(`${SERVER_URL}/verify-token`, { withCredentials: true })
                 const { status, user: fetchedUser } = response.data
                 if (status) {
                     setUser(fetchedUser)
@@ -43,7 +45,7 @@ function Review({ data, setData }) {
         if (!user || !user.id || !data || !data._id) return; // ✅ Ensure itemId exists
         const fetchUserReview = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/review/${data._id}/${user.id}`);
+                const response = await axios.get(`${SERVER_URL}/review/${data._id}/${user.id}`);
 
                 if (response.data.status) {
                     setUserReview(response.data.data);
@@ -61,7 +63,7 @@ function Review({ data, setData }) {
         const updatedReview = { ...userReeview, rating, userId: user.id, username: user.fullName };
 
         try {
-            const response = await axios.patch(`http://localhost:3000/review/${data._id}`, updatedReview)
+            const response = await axios.patch(`${SERVER_URL}/review/${data._id}`, updatedReview)
             const { status, data: updatedData, message } = response.data
             if (status) {
 
@@ -77,7 +79,7 @@ function Review({ data, setData }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:3000/items/Extras");
+                const response = await axios.get(`${SERVER_URL}/items/Extras`);
                 setExtras(response.data.data);
             } catch (error) {
                 console.error("Error fetching extras:", error);
@@ -195,7 +197,7 @@ function Review({ data, setData }) {
 
 
         try {
-            const response = await axios.post('http://localhost:3000/cart', formData, {
+            const response = await axios.post(`${SERVER_URL}/cart`, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             })
             const { status, data, message } = response.data

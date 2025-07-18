@@ -11,10 +11,13 @@ function Search() {
   const { searchQuery, setSearchQuery } = useContext(SearchQueryContext)
   const [data, setData] = useState([])
   const [items, setItems] = useState([])
+    const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/items`)
+        const response = await axios.get(`${SERVER_URL}/items`)
         setData(response.data.data)
         setItems(response.data.data)
       } catch (error) {

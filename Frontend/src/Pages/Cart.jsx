@@ -8,10 +8,12 @@ import BottomBar from '../Components/Bottom Bar/BottomBar'
 function Cart() {
   const [user, setUser] = useState()
   const [cart, setCart] = useState([])
+    const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/verify-token', { withCredentials: true })
+        const response = await axios.get(`${SERVER_URL}/verify-token`, { withCredentials: true })
         const { status, user } = response.data
         if (status) {
           setUser(user)
@@ -30,7 +32,7 @@ function Cart() {
     }
     const fetchData = async (req, res) => {
       try {
-        const response = await axios.get(`http://localhost:3000/cart/${user.id}`)
+        const response = await axios.get(`${SERVER_URL}/cart/${user.id}`)
         const { data, status, message } = response.data
         if (status) {
           setCart(data)
@@ -38,7 +40,6 @@ function Cart() {
       } catch (error) {
         console.error(error)
         const errorMessage = error.response?.data.message || 'Something went wrong. Please try again.';
-        Alert('error', 'Error', errorMessage, 'Ok')
       }
     }
     fetchData()

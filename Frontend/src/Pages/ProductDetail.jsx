@@ -9,10 +9,12 @@ import NavbarBack from '../Components/Navbar Back/NavbarBack'
 function ProductDetail() {
   const { id } = useParams()
   const [data, setData] = useState({})
+    const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/item/${id}`)
+        const response = await axios.get(`${SERVER_URL}/item/${id}`)
         setData(response.data.data)
       } catch (error) {
         console.error(error)

@@ -14,6 +14,8 @@ function ShoppingCart({ setCart, cart }) {
     const [extras, setExtras] = useState([])
     const [user, setUser] = useState()
     const navigate = useNavigate()
+      const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -38,7 +40,7 @@ function ShoppingCart({ setCart, cart }) {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:3000/items/Extras");
+                const response = await axios.get(`${SERVER_URL}/items/Extras`);
                 setExtras(response.data.data);
             } catch (error) {
                 console.error("Error fetching extras:", error);
@@ -60,7 +62,7 @@ function ShoppingCart({ setCart, cart }) {
         console.log(formData);
 
         try {
-            const response = await axios.patch('http://localhost:3000/cart/addCount', formData, {
+            const response = await axios.patch(`${SERVER_URL}/cart/addCount`, formData, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -81,7 +83,7 @@ function ShoppingCart({ setCart, cart }) {
         formData.append('userId', cart.userId)
         formData.append('itemId', itemId)
         try {
-            const response = await axios.patch('http://localhost:3000/cart/decreaseCount', formData, {
+            const response = await axios.patch(`${SERVER_URL}/cart/decreaseCount`, formData, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -107,11 +109,12 @@ function ShoppingCart({ setCart, cart }) {
         let array = []
         array.push({ name: item.name, itemId: item._id, image: item.image, quantity: 1, price: item.price })
         formData.append('userId', userID);
+        
         formData.append('items', JSON.stringify(array));
 
 
         try {
-            const response = await axios.post('http://localhost:3000/cart', formData, {
+            const response = await axios.post(`${SERVER_URL}/cart`, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             })
             const { status, data, message } = response.data
@@ -129,7 +132,7 @@ function ShoppingCart({ setCart, cart }) {
 
     const handleDeleteCart = async (itemId) => {
         try {
-            const response = await axios.delete('http://localhost:3000/cart', {
+            const response = await axios.delete(`${SERVER_URL}/cart`, {
                 params: { userId: cart.userId, itemId }
             })
             const { status, data, message } = response.data
@@ -168,7 +171,7 @@ function ShoppingCart({ setCart, cart }) {
     const handlePayment = async () => {
         try {
             console.log(cart);
-            const response = await axios.post('http://localhost:3000/create-razorpay-order', { totalPrice: cart.totalPrice })
+            const response = await axios.post(`${SERVER_URL}/create-razorpay-order`, { totalPrice: cart.totalPrice })
             const { amount, currency, key, razorpayOrderId } = response.data
             const options = {
                 key,
@@ -180,7 +183,7 @@ function ShoppingCart({ setCart, cart }) {
                     const { razorpay_payment_id, razorpay_order_id, razorpay_signature } = response;
 
                     // Send everything to backend to verify and save order
-                    const verify = await axios.post('http://localhost:3000/verify-payment', {
+                    const verify = await axios.post(`${SERVER_URL}/verify-payment`, {
                         razorpay_payment_id,
                         razorpay_order_id,
                         razorpay_signature,
@@ -215,7 +218,7 @@ function ShoppingCart({ setCart, cart }) {
     const handleOrder = async () => {
         try {
             const address = `${formData.firstName} ${formData.lastName}, ${formData.address}, ${formData.city}, ${formData.state} - ${formData.pincode}, Phone: ${formData.phone}`;
-            const response = await axios.post('http://localhost:3000/orders', { userId: user.id, address });
+            const response = await axios.post(`${SERVER_URL}/orders`, { userId: user.id, address });
 
             // Extract response data
             const { status, message } = response.data;

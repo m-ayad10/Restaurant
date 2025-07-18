@@ -12,11 +12,12 @@ function ProfileInfo() {
   const [user, setUser] = useState()
   const [loading, setLoading] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
+    const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/verify-token', { withCredentials: true });
+        const response = await axios.get(`${SERVER_URL}/verify-token`, { withCredentials: true });
         const { status, user } = response.data;
         if (status) {
           setUser(user);
@@ -81,7 +82,7 @@ function ProfileInfo() {
     // --- End Validation ---
      
       try {
-        const response = await axios.patch(`http://localhost:3000/user/${user.id}`, { email, fullName: name, phone }, {
+        const response = await axios.patch(`${SERVER_URL}/user/${user.id}`, { email, fullName: name, phone }, {
           headers: {
             'Content-Type': 'application/json'
           },

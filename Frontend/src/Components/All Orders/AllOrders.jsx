@@ -6,10 +6,12 @@ import { Alert } from '../../SweetAlert'
 function AllOrders() {
   const [user, setUser] = useState()
   const [orders, setOrders] = useState([])
+  const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/allorders')
+        const response = await axios.get(`${SERVER_URL}/allorders`)
         const { data, status, message } = response.data
         if (status) {
           const sortedOrders = data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
@@ -30,7 +32,7 @@ function AllOrders() {
 
   const handleStatusChange = async (orderId, newStatus) => {
     try {
-      const response = await axios.patch('http://localhost:3000/allorders', {
+      const response = await axios.patch(`${SERVER_URL}/allorders`, {
         OrderId: orderId,
         status: newStatus
       });

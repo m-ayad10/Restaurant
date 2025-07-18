@@ -6,11 +6,14 @@ import NavbarName from '../Components/Navbar name/NavbarName'
 function AdminItems() {
   const navigate = useNavigate()
   const [data, setData] = useState([])
+    const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/items")
-        setData(response.data.data)
+        const response = await axios.get(`${SERVER_URL}/items`)
+        
+        setData(response.data.data||[])
       } catch (error) {
         console.error("Error fetching items:", error);
         const errorMessage = error.response?.data.message || 'Something went wrong. Please try again.';
@@ -22,7 +25,7 @@ function AdminItems() {
 
   const handleDeleteItem = async (itemId) => {
     try {
-      const response = await axios.delete(`http://localhost:3000/item/${itemId}`)
+      const response = await axios.delete(`${SERVER_URL}/item/${itemId}`)
       const {data,message,status}=response.data
       if (status) {
         setData(data)

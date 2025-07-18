@@ -14,12 +14,14 @@ function UpdateAdminItem() {
   const [description, setDescription] = useState('')
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
+    const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
   const { id } = useParams()
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/category')
+        const response = await axios.get(`${SERVER_URL}/category`)
         setCateg(response.data.data)
       } catch (error) {
         console.log(error);
@@ -32,9 +34,12 @@ function UpdateAdminItem() {
   useEffect(() => {
     const fetchItemDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/item/${id}`);
+        const url=`${SERVER_URL}/item/${id}`   
+             
+        const response = await axios.get(url);
 
         const { name, price, category, description, image } = response.data.data;
+        
         setName(name);
         setPrice(price);
         setCategory(category);
@@ -45,10 +50,12 @@ function UpdateAdminItem() {
       }
     };
 
-    if (id) {
-      fetchItemDetails();
+    if (!id) {
+      return
     }
+    fetchItemDetails();
   }, [id]);
+
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setImageFile(file)
@@ -64,7 +71,8 @@ function UpdateAdminItem() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
-    if (!name || !description || !category || !price || !image) {
+    
+    if (!name || !description || !category || !price ) {
       alert('Please fill all the fields and upload an image.');
       setLoading(false)
       return;
@@ -79,7 +87,9 @@ function UpdateAdminItem() {
         formData.append('image', imageFile)
       }
 
-      const response = await axios.patch(`http://localhost:3000/item/${id}`, formData);
+      console.log(name);
+      
+      const response = await axios.patch(`${SERVER_URL}/item/${id}`, formData);
 
       const { status, message, error } = response.data
       if (status) {

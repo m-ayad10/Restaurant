@@ -7,6 +7,8 @@ import { Alert, AlertWithTimer } from "../../SweetAlert";
 
 function AdminLoginForm() {
     const navigate = useNavigate();
+    const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
 
     const [formData, setFormData] = useState({
         email: "",
@@ -20,7 +22,7 @@ function AdminLoginForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3000/admin/login', formData, {
+            const response = await axios.post(`${SERVER_URL}/admin/login`, formData, {
                 headers: {
                     'Content-Type': 'application/json'
                 }, withCredentials: true

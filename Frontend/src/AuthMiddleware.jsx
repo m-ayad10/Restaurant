@@ -1,13 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Navigate, Outlet, useNavigate } from "react-router-dom";
+const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
 
 export const ProtectedRoute = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(null)
     useEffect(() => {
         const validate = async () => {
             try {
-                const response = await axios.get('http://localhost:3000/verify-token', { withCredentials: true })
+                const response = await axios.get(`${SERVER_URL}/verify-token`, { withCredentials: true })
                 const { status, message, user } = response.data
                 setIsAuthenticated(status)
             } catch (error) {
@@ -27,7 +29,7 @@ export const ProtectedRoute = () => {
 
 export const getUserDetails = async (setUser) => {
     try {
-        const response = await axios.get('http://localhost:3000/verify-token', { withCredentials: true })
+        const response = await axios.get(`${SERVER_URL}/verify-token`, { withCredentials: true })
         const { status, user } = response.data
         if (status) {
             setUser(user)
@@ -41,7 +43,7 @@ export const signOut=async()=>
 {
     const navigate=useNavigate()
     try {
-       const response= await axios.post('http://localhost:3000/logout',{},{withCredentials:true})
+       const response= await axios.post(`${SERVER_URL}/logout`,{},{withCredentials:true})
        if (response.data.status) {
         navigate('/login')
        }

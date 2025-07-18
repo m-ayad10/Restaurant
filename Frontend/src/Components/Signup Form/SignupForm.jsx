@@ -14,6 +14,8 @@ function SignupForm() {
     });
 
     const navigate = useNavigate()
+      const SERVER_URL = import.meta.env.VITE_SERVER_URL;
+
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,7 +29,7 @@ function SignupForm() {
             return;
         }
         try {
-            const response = await axios.post('http://localhost:3000/signup', formData, {
+            const response = await axios.post(`${SERVER_URL}/signup`, formData, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

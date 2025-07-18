@@ -13,6 +13,7 @@ function LoginForm() {
         email: "",
         password: ""
     });
+  const SERVER_URL = import.meta.env.VITE_SERVER_URL;
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,7 +22,7 @@ function LoginForm() {
     const handleSubmit =async (e) => {
         e.preventDefault();
         try {
-          const response=await axios.post('http://localhost:3000/login',formData,{
+          const response=await axios.post(`${SERVER_URL}/login`,formData,{
             headers:{
               'Content-Type':'application/json'
             },withCredentials:true
