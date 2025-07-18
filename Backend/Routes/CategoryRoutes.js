@@ -4,6 +4,7 @@ const { CategoryUpload, FetchCategory, deleteCategory } = require("../Controller
 const router = express.Router();
 const fileUpload = require("express-fileupload");
 
+
 const fileUploadOption = {
   useTempFiles: true, // Ensure temporary files are used
   tempFileDir: "/tmp/",

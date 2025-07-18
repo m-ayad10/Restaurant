@@ -12,6 +12,7 @@ cloudinary.config({
 const ItemUpload = async (req, res) => {
   try {
     const { name, description, price, category } = req.body;
+    
     if (!req.files) {
       return res.status(500).json({ message: "Bad Request", status: false });
     }
@@ -86,7 +87,7 @@ const deleteItem = async (req, res) => {
 
 const UpdateItem = async (req, res) => {
   try {
-    const { itemId } = req.params;
+    const { itemId } = req.params;          
     const { name, description, category, price } = req.body;
 
     // 🔥 Find the item by _id (NOT id)
@@ -134,7 +135,6 @@ const UpdateItem = async (req, res) => {
 const FetchItem = async (req, res) => {
   try {
     const { id } = req.params;
-
     const data = await ItemModel.findOne({ _id: id });
     if (data.length === 0) {
       return res.json({ message: "No data found", status: false });

@@ -2,6 +2,7 @@ const CartModel = require("../Models/CartScheema");
 
 const addToCart = async (req, res) => {
   try {
+    
     if (!req.body.userId || !req.body.items) {
       return res.status(400).json({ status: false, message: "Missing required fields" });
     }

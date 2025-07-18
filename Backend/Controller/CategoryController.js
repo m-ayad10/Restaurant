@@ -14,7 +14,6 @@ const CategoryUpload = async (req, res) => {
       return res.status(500).json({ message: "Bad Request", status: false });
     }
     const { name } = req.body;
-    const { image } = req.files;
     const fileImage = req.files.image.tempFilePath;
     
     const result = await cloudinary.uploader.upload(fileImage, {

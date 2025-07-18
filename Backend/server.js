@@ -10,10 +10,22 @@ const ItemRouter = require('./Routes/ItemRoutes')
 const CartRouter = require('./Routes/CartRoutes')
 const AdminRouter = require('./Routes/AdminRoutes')
 const OrderRouter = require('./Routes/OrderRoutes')
-const fileUpload=require('express-fileupload')
+// const fileUpload=require('express-fileupload')
 const jwt=require('jsonwebtoken')
 const cookieParser = require("cookie-parser");
 
+
+
+
+
+app.use(cookieParser())
+app.use(express.json());  // ✅ Replaces bodyParser.json()
+app.use(express.urlencoded({ extended: true }));  // ✅ Replaces bodyParser.urlencoded()
+// app.use(fileUpload({
+//     useTempFiles: true,  // ✅ Enables temporary file storage
+//     tempFileDir: "/tmp/",  // ✅ Directory for temp files
+// }));
+const Port=process.env.PORT
 // ✅ Trust proxy if deploying to Render
 app.set('trust proxy', 1);
 
@@ -23,18 +35,6 @@ app.use(cors({
     methods: ["GET", "POST", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
-
-
-
-app.use(cookieParser())
-app.use(express.json());  // ✅ Replaces bodyParser.json()
-app.use(express.urlencoded({ extended: true }));  // ✅ Replaces bodyParser.urlencoded()
-app.use(fileUpload({
-    useTempFiles: true,  // ✅ Enables temporary file storage
-    tempFileDir: "/tmp/",  // ✅ Directory for temp files
-}));
-const Port=process.env.PORT
-
 app.listen(Port,'0.0.0.0',()=>
 {
     console.log('Server Started at PORT no:',Port);

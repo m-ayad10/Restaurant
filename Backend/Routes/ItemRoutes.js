@@ -10,7 +10,7 @@ const fileUploadOption = {
 }
 
 // Upload a new item with validation
-router.post('/item', ItemValidation, ItemUpload)
+router.post('/item',fileUpload(fileUploadOption), ItemValidation, ItemUpload)
 
 // Fetch all items
 router.get('/items', FetchAllItems)
@@ -25,7 +25,7 @@ router.get('/items/:category', ItemsFetch)
 router.get('/item/:id', FetchItem)
 
 // Update an item by ID
-router.patch('/item/:itemId', UpdateItem)
+router.patch('/item/:itemId',fileUpload(fileUploadOption), UpdateItem)
 
 // Post a review for an item
 router.patch('/review/:itemId', postReview)

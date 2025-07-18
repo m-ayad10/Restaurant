@@ -1,7 +1,8 @@
 const Joi = require("joi");
 
 const ItemValidation = async (req, res, next) => {
-  try {        
+  try {  
+          
     const schema = Joi.object({
       name: Joi.string().required().messages({
         "any.required": "Name is required",
