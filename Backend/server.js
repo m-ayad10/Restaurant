@@ -30,7 +30,7 @@ const Port=process.env.PORT
 app.set('trust proxy', 1);
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://restaurant-frontend-3k8b.onrender.com",
     credentials: true,
     methods: ["GET", "POST", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
