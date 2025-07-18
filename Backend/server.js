@@ -14,12 +14,17 @@ const fileUpload=require('express-fileupload')
 const jwt=require('jsonwebtoken')
 const cookieParser = require("cookie-parser");
 
+// ✅ Trust proxy if deploying to Render
+app.set('trust proxy', 1);
+
 app.use(cors({
     origin: "http://localhost:5173",
     credentials: true,
     methods: ["GET", "POST", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
+
 
 app.use(cookieParser())
 app.use(express.json());  // ✅ Replaces bodyParser.json()

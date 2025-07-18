@@ -47,7 +47,7 @@ const AdminLogin = async (req, res) => {
     res.cookie("adminToken", jwtToken, {
       httpOnly: true,
       secure: true, // Set to true in production (for HTTPS)
-      sameSite: "Lax",
+      sameSite: "None",
     });
     res
       .status(201)
@@ -84,7 +84,7 @@ const AdminVerifyToken=async(req,res)=>
         res.clearCookie("adminToken", {
             httpOnly: true,
             secure: true,
-            sameSite: "strict",
+            sameSite: "None",
         });
         return res.status(200).json({ message: "Logout successful", status: true });
     } catch (error) {
