@@ -45,7 +45,7 @@ const login = async (req, res) => {
     );
     res.cookie("token", jwtToken, {
       httpOnly: true,
-      secure: false, // Set to true in production (for HTTPS)
+      secure: true, // Set to true in production (for HTTPS)
       sameSite: "Lax",
     });
     res
@@ -82,7 +82,7 @@ const verifyToken=async(req,res)=>
     try {
         res.clearCookie("token", {
             httpOnly: true,
-            secure: false,
+            secure: true,
             sameSite: "strict",
         });
         return res.status(200).json({ message: "Logout successful", status: true });
@@ -108,7 +108,7 @@ const editUser=async(req,res)=>
     );
     res.cookie("token", jwtToken, {
       httpOnly: true,
-      secure: false, // Set to true in production (for HTTPS)
+      secure: true, // Set to true in production (for HTTPS)
       sameSite: "Lax",
     });
     res.status(200).json({message:'User Updated',status:true,data:updateUser})

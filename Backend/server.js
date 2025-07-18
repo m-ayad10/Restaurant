@@ -23,7 +23,7 @@ app.use(fileUpload({
 }));
 const Port=process.env.PORT
 
-app.listen(Port,()=>
+app.listen(Port,'0.0.0.0',()=>
 {
     console.log('Server Started at PORT no:',Port);
 })
